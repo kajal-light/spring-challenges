@@ -17,22 +17,29 @@ import com.kajal.spring.challenges.service.ChallengeService;
 public class ChallengeController {
 
 	private static final Logger logger = LoggerFactory.getLogger(ChallengeController.class);
-	
+
 	@Autowired
 	ChallengeService challengeService;
-	
-	// Create a new City
-	@PostMapping("/cities")
-	public ResponseEntity<Double> getAverage(@RequestParam int[]  input){
 
-		logger.info("Inside controller");
+	@PostMapping("/average")
+	public ResponseEntity<Double> getAverage(@RequestParam int[] input) {
+
+		logger.info("Inside average function");
 
 		double average = challengeService.getAverage(input);
-
-
 
 		return new ResponseEntity<Double>(average, HttpStatus.OK);
 
 	}
 
+	@PostMapping("/sum")
+	public ResponseEntity<Double> getSum(@RequestParam int[] input) {
+
+		logger.info("Inside sum function");
+
+		double sum = challengeService.getSum(input);
+
+		return new ResponseEntity<Double>(sum, HttpStatus.OK);
+
+	}
 }

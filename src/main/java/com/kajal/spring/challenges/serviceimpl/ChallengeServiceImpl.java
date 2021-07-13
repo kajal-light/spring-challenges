@@ -18,4 +18,16 @@ public class ChallengeServiceImpl implements ChallengeService {
 		return total / input.length;
 	}
 
+	@Override
+	public double getSum(int[] input) {
+		double total = 0;
+		if (input == null)
+			return 0;
+		for (int i = 0; i < input.length; i++) {
+			total += input[i];
+		}
+
+		return total ;
+	}
+
 }

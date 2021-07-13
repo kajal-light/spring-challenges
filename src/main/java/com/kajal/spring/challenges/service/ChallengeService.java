@@ -7,4 +7,6 @@ public interface ChallengeService {
 
 	double getAverage(int[] input);
 
+	double getSum(int[] input);
+
 }
