@@ -28,7 +28,7 @@ public class ChallengeController {
 
 		double average = challengeService.getAverage(input);
 
-		return new ResponseEntity<Double>(average, HttpStatus.OK);
+		return new ResponseEntity<>(average, HttpStatus.OK);
 
 	}
 
@@ -39,7 +39,40 @@ public class ChallengeController {
 
 		double sum = challengeService.getSum(input);
 
-		return new ResponseEntity<Double>(sum, HttpStatus.OK);
+		return new ResponseEntity<>(sum, HttpStatus.OK);
+
+	}
+
+	@PostMapping("/duplicates")
+	public char[] getDuplicates(@RequestParam String input) {
+
+		logger.info("Inside duplicate function");
+
+		char[] ans = challengeService.getDuplicates(input);
+		return ans;
+		// return new ResponseEntity<>(sum, HttpStatus.OK);
+
+	}
+
+	@PostMapping("/encrypt")
+	public String encrypt(@RequestParam String input) {
+
+		logger.info("Inside encrypt function");
+
+		String ans = challengeService.encrypt(input);
+		return ans;
+		// return new ResponseEntity<>(sum, HttpStatus.OK);
+
+	}
+
+	@PostMapping("/decrypt")
+	public String decrypt(@RequestParam String input) {
+
+		logger.info("Inside decrypt function");
+
+		String ans = challengeService.encrypt(input);
+		return ans;
+		// return new ResponseEntity<>(sum, HttpStatus.OK);
 
 	}
 }

@@ -9,4 +9,10 @@ public interface ChallengeService {
 
 	double getSum(int[] input);
 
+	char[] getDuplicates(String arg);
+
+	String encrypt(String rawPassword);
+
+	String decrypt(String encryptPassword);
+
 }
